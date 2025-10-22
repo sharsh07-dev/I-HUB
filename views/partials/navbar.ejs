@@ -1,23 +1,28 @@
 <nav class="navbar">
     <div class="nav-brand">
-        <a href="/" class="nav-link brand-link">I-HUB</a>
+        <a href="/" class="nav-link brand-link">AESTHETIC</a>
     </div>
-    <ul class="nav-links">
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        &#9776; </button>
+
+    <ul class="nav-links nav-menu" id="nav-menu">
         <li><a href="/" class="nav-link">Home</a></li>
         <li><a href="/products" class="nav-link">Products</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
         
-       <% if (isAuthenticated) { %>
-    <li>
-        <span class="nav-link welcome-text">
-            Welcome, <%= user.email %>
-        </span>
-    </li>
-    <li><a href="/auth/logout" class="nav-link btn btn-secondary">Logout</a></li>
-
-<% } else { %>
-    <li><a href="/auth/login" class="nav-link">Login</a></li>
-    <li><a href="/auth/register" class="nav-link btn">Register</a></li>
-<% } %>
+        <% if (isAuthenticated) { %>
+            <li>
+                <span class="nav-link welcome-text">
+                    Welcome, <%= user.email %>
+                </span>
+            </li>
+            <li><a href="/auth/logout" class="nav-link btn btn-secondary">Logout</a></li>
+        
+        <% } else { %>
+            <li><a href="/auth/login" class="nav-link">Login</a></li>
+            <li><a href="/auth/register" class="nav-link btn">Register</a></li>
+        <% } %>
         
         <li>
             <a href="/cart" class="nav-link nav-cart-link">

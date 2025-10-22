@@ -3,8 +3,17 @@
 // Wait for the DOM to be fully loaded before running scripts
 document.addEventListener('DOMContentLoaded', () => {
 
+    
     console.log("Aesthetic JS Loaded!");
+const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            // Toggle the 'active' class on the menu
+            navMenu.classList.toggle('active');
+        });
+    }
     // --- 1. Anime.js: Micro-interactions ---
 // --- 5. Syncfusion Initialization ---
     // We moved this code from footer.ejs to fix the 'ej' error
