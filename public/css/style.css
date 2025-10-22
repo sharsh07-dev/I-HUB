@@ -190,6 +190,7 @@ img {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
+    justify-content: start; 
 }
 
 .product-card {
@@ -429,7 +430,7 @@ img {
     /* --- General Layout --- */
     .main-container {
         padding: 1rem;
-        padding-top: 80px; /* Smaller navbar offset */
+        padding-top: 80px; 
     }
     
     .page-title {
@@ -466,5 +467,17 @@ img {
 @media (min-width: 769px) {
     .nav-toggle {
         display: none;
+    }
+}
+
+.featured-grid {
+   
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+@media (max-width: 768px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
     }
 }
