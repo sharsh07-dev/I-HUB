@@ -11,6 +11,7 @@ const productRoutes = require('./routes/product.routes.js');
 const cartRoutes = require('./routes/cart.routes.js');
 const Product = require('./models/product.model.js');
 const orderRoutes = require('./routes/order.routes.js');
+const contactRoutes = require('./routes/contact.routes.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -56,6 +57,7 @@ app.use('/auth', authRoutes);
 app.use('/products', productRoutes);
 app.use('/cart', cartRoutes);
 app.use('/order', orderRoutes);
+app.use('/contact', contactRoutes);
 
 // Homepage Route
 // Homepage Route

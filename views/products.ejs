@@ -9,9 +9,8 @@
                 <a href="/products/<%= product._id %>" class="product-card-link">
                     <img src="<%= product.imageUrl %>" alt="<%= product.name %>" class="product-image">
                     <h3 class="product-name"><%= product.name %></h3>
-                 <p class="product-price"><%= product.price.toLocaleString('en-IN', { style: 'currency', currency: 'INR' }) %></p>
-                
-                <form action="/cart/add" method="POST">
+                    <p class="product-price"><%= product.price.toLocaleString('en-IN', { style: 'currency', currency: 'INR' }) %></p>
+                </a> <form action="/cart/add" method="POST">
                     <input type="hidden" name="productId" value="<%= product._id %>">
                     <input type="hidden" name="quantity" value="1">
                     <button type="submit" class="btn btn-small">Add to Cart</button>

@@ -188,9 +188,9 @@ img {
 /* Product Grid */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    /* --- THIS LINE IS NOW FIXED --- */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    justify-content: start; 
 }
 
 .product-card {
@@ -214,7 +214,7 @@ img {
 
 .product-image {
     width: 100%;
-    height: 363px;
+    height: 300px;
     object-fit: cover;
     border-radius: var(--radius-sm);
     margin-bottom: 1rem;
@@ -237,6 +237,11 @@ img {
 }
 .product-card .btn {
     width: 100%;
+}
+
+/* This class is for your homepage featured products */
+.featured-grid {
+    grid-template-columns: repeat(2, 1fr);
 }
 
 /* Product Detail Page */
@@ -383,13 +388,12 @@ img {
     border-top: 1px solid var(--color-border);
     color: var(--color-text-muted);
 }
-/* public/css/style.css */
 
+/* Welcome Text */
 .welcome-text {
     color: var(--color-text);
     font-weight: 600;
 }
-/* public/css/style.css */
 
 /* --- 7. Responsive Media Queries --- */
 @media (max-width: 768px) {
@@ -461,6 +465,11 @@ img {
     .form-container {
         padding: 1.5rem;
     }
+    
+    /* On mobile, make featured grid 1 column */
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Hide hamburger on desktop */
@@ -470,14 +479,35 @@ img {
     }
 }
 
-.featured-grid {
-   
-    grid-template-columns: repeat(2, 1fr);
+/* --- 8. Contact Form Additions --- */
+
+/* Style for the textarea to match other inputs */
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    line-height: 1.6;
 }
 
+/* Alert Box Styles for success/error messages */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+}
 
-@media (max-width: 768px) {
-    .featured-grid {
-        grid-template-columns: 1fr;
-    }
+.alert-success {
+    background-color: #2a9d8f; /* A nice green */
+    color: #fff;
+}
+
+.alert-danger {
+    background-color: #e76f51; /* A nice red */
+    color: #fff;
 }
